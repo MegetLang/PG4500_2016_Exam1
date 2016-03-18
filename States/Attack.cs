@@ -20,8 +20,6 @@ namespace PG4500_2016_Exam1.States
         {
             base.EnterState();
             Robot.Out.WriteLine("The enemy is "+ Robot.Enemy.BearingDegrees +  " From me");
-            Robot.SetAhead(100);
-
         }
 
         public override string ProcessState()

@@ -19,10 +19,9 @@ namespace PG4500_2016_Exam1
 		public override void Run()
 		{
 			InitBot();
-            
+
             while (true)
 			{
-                
                 fsm.Update();
                 Execute();
 			}
@@ -33,8 +32,12 @@ namespace PG4500_2016_Exam1
             Enemy.SetEnemyData(evnt);
             fsm.Queue("Attack");
         }
+        public override void OnHitWall(HitWallEvent evnt)
+        {
+            TurnRight(180);
+        }
 
-		private void InitBot()
+        private void InitBot()
 		{
 	
             SetAllColors(Color.Green);

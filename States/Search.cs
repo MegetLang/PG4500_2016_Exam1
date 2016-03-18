@@ -8,17 +8,9 @@ using Robocode;
 
 namespace PG4500_2016_Exam1.States
 {
+    
 	public class Search : State
 	{
-        private void ScanForEnemy()
-        {
-            while (Robot.Enemy.Name == null)
-            {
-                Robot.TurnRadarRight(15);
-            }
-            //Med mer tid ville jeg en mer optimal måte å scanne etter fiender på.
-        }
-
 		public Search()
 			:base("Search")
 		{
@@ -26,11 +18,22 @@ namespace PG4500_2016_Exam1.States
         public override void EnterState()
         {
             base.EnterState();
-            ScanForEnemy();
-
+     
         }
         public override string ProcessState()
 		{
+            Random r = new Random();
+
+            Robot.SetTurnRadarRight(15);
+            Robot.SetAhead(20);
+            double angle = r.NextDouble() - 90 + (r.NextDouble() * 180);
+            int turncheck = r.Next(1, 6);
+            if (turncheck == 2)
+            {
+                Robot.SetTurnLeft(angle);
+            }
+            //Med mer tid ville jeg en mer optimal måte å scanne etter fiender på.
+            Robot.Execute();
             return null;
 		}
 	}
