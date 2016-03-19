@@ -7,10 +7,10 @@ using PG4500_2016_Exam1.Robocode;
 
 namespace PG4500_2016_Exam1.States
 {
-	public class Escape: State
+	public class EvasiveMode: State
 	{
-		public Escape()
-			: base("Escape")
+		public EvasiveMode()
+			: base("EvasiveMode")
 		{
 		}
 

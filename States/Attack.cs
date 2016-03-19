@@ -27,16 +27,21 @@ namespace PG4500_2016_Exam1.States
             double radarTurn = Robot.Heading + Robot.Enemy.BearingDegrees - Robot.RadarHeading;
             Robot.SetTurnRadarRight(Utils.NormalRelativeAngle(radarTurn));
             Robot.SetTurnGunRight(Utils.NormalRelativeAngle(radarTurn));
-
+            
             Robot.steeringBehavior("Seek");
             Robot.steeringBehavior("Arrive");
 
             if (Robot.Time - Robot.Enemy.Time > 40)
-            {
                 nextState = "Search";
-            }
+            
 
-            Robot.SetFire(2);
+            if (Robot.Energy < 70 && Robot.Energy < Robot.Enemy.Energy)
+            {
+                //Enemy is too clever, employ smarter tactics
+                //nextState = "EvasiveMode";
+            }
+            if (Robot.Time - Robot.Enemy.Time < 5)
+                Robot.SetFire(2);
                      
             return nextState;
 		}

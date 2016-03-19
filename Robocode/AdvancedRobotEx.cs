@@ -52,9 +52,14 @@ namespace PG4500_2016_Exam1.Robocode
                 }
                 else if (Enemy.Distance > 25)
                 {
-                    Stop();
+                    MaxVelocity = 0;
+                }
+                else
+                {
+                    MaxVelocity = 8;
                 }
             }
+
             if (behaviorType == "Seek")
             {
                 SetTurnRight(Enemy.BearingDegrees);

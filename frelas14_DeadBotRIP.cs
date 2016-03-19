@@ -13,7 +13,7 @@ namespace PG4500_2016_Exam1
 
 		public frelas14_DeadBotRIP()
 		{
-			fsm = new FiniteStateMachine(new State[] { new Search(), new Attack(), new Escape() });
+			fsm = new FiniteStateMachine(new State[] { new Search(), new Attack(), new EvasiveMode() });
 		}
        
 		public override void Run()

@@ -29,6 +29,7 @@ namespace PG4500_2016_Exam1.Robocode
 		public virtual void EnterState()
 		{
 			Robot.Out.WriteLine("{0,6} [{1}] entered.", Robot.Time, stateName);
+            Robot.MaxVelocity = 8;
 		}
 
 		public virtual void ExitState()

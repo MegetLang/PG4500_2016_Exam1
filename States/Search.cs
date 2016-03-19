@@ -17,15 +17,13 @@ namespace PG4500_2016_Exam1.States
 		}
         public override void EnterState()
         {
-            base.EnterState();
-     
+            base.EnterState();     
         }
         public override string ProcessState()
 		{
             Robot.SetTurnRadarRight(10);
             Robot.SetTurnGunRight(10);
             Robot.steeringBehavior("Wander");
-            //Med mer tid ville jeg en mer optimal måte å scanne etter fiender på.
             Robot.Execute();
             return null;
 		}
