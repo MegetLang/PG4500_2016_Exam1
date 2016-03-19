@@ -38,9 +38,9 @@ namespace PG4500_2016_Exam1.Robocode
             Enemy = new EnemyData();
         }
 
-        public void steeringBehavior(string behaviortype)
+        public void steeringBehavior(string behaviorType)
         {
-            if (behaviortype == "Arrive")
+            if (behaviorType == "Arrive")
             {
                 if (Enemy.Distance > 100)
                 {
@@ -55,10 +55,21 @@ namespace PG4500_2016_Exam1.Robocode
                     Stop();
                 }
             }
-            if (behaviortype == "Seek")
+            if (behaviorType == "Seek")
             {
                 SetTurnRight(Enemy.BearingDegrees);
                 SetAhead(200);
+            }
+            if (behaviorType == "Wander")
+            {
+                Random r = new Random();
+                SetAhead(20);
+                double angle = r.NextDouble() - 90 + (r.NextDouble() * 180);
+                int turncheck = r.Next(1, 8);
+                if (turncheck == 1)
+                {
+                    SetTurnLeft(angle);
+                }
             }
         }
 

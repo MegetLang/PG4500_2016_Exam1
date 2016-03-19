@@ -26,6 +26,7 @@ namespace PG4500_2016_Exam1.States
             string nextState = null;
             double radarTurn = Robot.Heading + Robot.Enemy.BearingDegrees - Robot.RadarHeading;
             Robot.SetTurnRadarRight(Utils.NormalRelativeAngle(radarTurn));
+            Robot.SetTurnGunRight(Utils.NormalRelativeAngle(radarTurn));
 
             Robot.steeringBehavior("Seek");
             Robot.steeringBehavior("Arrive");

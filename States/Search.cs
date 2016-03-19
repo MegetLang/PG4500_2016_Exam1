@@ -22,16 +22,9 @@ namespace PG4500_2016_Exam1.States
         }
         public override string ProcessState()
 		{
-            Random r = new Random();
-
             Robot.SetTurnRadarRight(10);
-            Robot.SetAhead(20);
-            double angle = r.NextDouble() - 90 + (r.NextDouble() * 180);
-            int turncheck = r.Next(1, 8);
-            if (turncheck == 1)
-            {
-                Robot.SetTurnLeft(angle);
-            }
+            Robot.SetTurnGunRight(10);
+            Robot.steeringBehavior("Wander");
             //Med mer tid ville jeg en mer optimal måte å scanne etter fiender på.
             Robot.Execute();
             return null;
