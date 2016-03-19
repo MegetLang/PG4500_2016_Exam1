@@ -38,6 +38,30 @@ namespace PG4500_2016_Exam1.Robocode
             Enemy = new EnemyData();
         }
 
+        public void steeringBehavior(string behaviortype)
+        {
+            if (behaviortype == "Arrive")
+            {
+                if (Enemy.Distance > 100)
+                {
+                    MaxVelocity = 6;
+                }
+                else if (Enemy.Distance > 50)
+                {
+                    MaxVelocity = 3;
+                }
+                else if (Enemy.Distance > 25)
+                {
+                    Stop();
+                }
+            }
+            if (behaviortype == "Seek")
+            {
+                SetTurnRight(Enemy.BearingDegrees);
+                SetAhead(200);
+            }
+        }
+
         public override void OnRobotDeath(RobotDeathEvent deadRobot)
         {
             if (deadRobot.Name == Enemy.Name)

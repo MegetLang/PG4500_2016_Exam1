@@ -27,8 +27,8 @@ namespace PG4500_2016_Exam1.States
             Robot.SetTurnRadarRight(10);
             Robot.SetAhead(20);
             double angle = r.NextDouble() - 90 + (r.NextDouble() * 180);
-            int turncheck = r.Next(1, 6);
-            if (turncheck == 2)
+            int turncheck = r.Next(1, 8);
+            if (turncheck == 1)
             {
                 Robot.SetTurnLeft(angle);
             }

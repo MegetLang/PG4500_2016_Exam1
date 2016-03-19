@@ -34,7 +34,7 @@ namespace PG4500_2016_Exam1
         }
         public override void OnHitWall(HitWallEvent evnt)
         {
-            TurnRight(180);
+            SetTurnRight(180);
         }
 
         private void InitBot()
