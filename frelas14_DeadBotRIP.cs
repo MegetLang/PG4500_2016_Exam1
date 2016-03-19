@@ -39,9 +39,7 @@ namespace PG4500_2016_Exam1
 
         private void InitBot()
 		{
-	
             SetAllColors(Color.Green);
-			IsAdjustGunForRobotTurn=true;
 			IsAdjustRadarForGunTurn=true;
             fsm.Init(this);
         }
