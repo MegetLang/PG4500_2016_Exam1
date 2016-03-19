@@ -36,11 +36,8 @@ namespace PG4500_2016_Exam1.States
                 nextState = "Search";
             }
 
-            if (Robot.Enemy.BearingDegrees < 5 && Robot.Enemy.BearingDegrees > -5)
-            {
-                Robot.Fire(2);
-            }
-            
+            Robot.SetFire(2);
+                     
             return nextState;
 		}
 	}
